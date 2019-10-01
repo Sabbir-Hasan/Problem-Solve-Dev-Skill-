@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DCP_46_Hall_Of_Fames_Of_JU_Programming_Society
+namespace DCP_69_Miraclaw_and_funny_sum
 {
     class Program
     {
@@ -9,11 +9,22 @@ namespace DCP_46_Hall_Of_Fames_Of_JU_Programming_Society
             int T = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < T; i++)
             {
+                int x = Convert.ToInt32(Console.ReadLine());
+                int s = 0,c = 0;
                 var line = Console.ReadLine();
                 var input = line.Split(' ');
-                int x1 = Convert.ToInt32(input[0]);
-                int x2 = Convert.ToInt32(input[1]);
-                Console.WriteLine(Convert.ToInt32((x1 + x2) / 2));
+                for (int j = 0; j < x; j++)
+                {
+                    int v = int.Parse(input[j]);
+                    s = s + v;
+                    int r = v - j;
+                    if (r<0)
+                    {
+                        r = 0;
+                    }
+                    c = c + r;
+                }
+                Console.WriteLine(s-c);
             }
         }
     }
